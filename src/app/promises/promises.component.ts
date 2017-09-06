@@ -10,12 +10,14 @@ import { SearchService } from "../services/search.service";
 
 
 export class PromisesComponent implements OnInit {
-
+  private loading: boolean = false;
   constructor(private itunes:SearchService) { }
 
   ngOnInit() {}
+  
   doSearch(term:string) {
-    this.itunes.search(term)
+    this.loading = true;
+    this.itunes.search(term).then( () => this.loading = false)
   }
 
 }
