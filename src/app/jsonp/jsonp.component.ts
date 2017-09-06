@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchItem } from "../class/search-item";
-import { SearchWithObservable } from "../services/observable.service";
+import { JsonpSearchService } from "../services/jsonp.service";
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {HttpModule, Http, Response} from '@angular/http';
@@ -8,17 +8,17 @@ import {ReactiveFormsModule, FormControl, FormsModule} from '@angular/forms';
 import {Observable } from "rxjs";
 
 @Component({
-  selector: 'app-observables',
-  templateUrl: './observables.component.html',
-  styleUrls: ['./observables.component.css']
+  selector: 'app-jsonp',
+  templateUrl: './jsonp.component.html',
+  styleUrls: ['./jsonp.component.css']
 })
-export class ObservablesComponent implements OnInit {
+export class JsonpComponent implements OnInit {
 
   private loading: boolean = false;
   private results: Observable<SearchItem[]>;
   private searchField: FormControl;
 
-  constructor(private itunes: SearchWithObservable) {
+  constructor(private itunes: JsonpSearchService) {
   }
   ngOnInit() {
     this.searchField = new FormControl();
@@ -34,4 +34,3 @@ export class ObservablesComponent implements OnInit {
     this.itunes.search(term);
   }
 }
-

@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2>Uso de Observables en Angular</h2>
+            <h2>Uso de JSONP en Angular</h2>
         </div>
         <div class="col-md-12">
             <p>
-                Uso de Observables en Angular con la API de itunes
+                Uso de JSONP en Angular con la API de itunes
             </p>
         </div>
     </div>
@@ -26,7 +26,7 @@
                 <li class="list-group-item" *ngFor="let track of results | async">
                     <img src="{{track.thumbnail}}">
                     <a target="_blank" href="{{track.link}}">{{ track.name }}
-        </a>
+            </a>
                 </li>
             </ul>
         </div>

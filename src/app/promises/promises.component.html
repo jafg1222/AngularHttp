@@ -1,19 +1,35 @@
-<form class="form-inline">
-    <div class="form-group">
-        <input type="search" class="form-control" placeholder="Enter search string" #search>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Uso de Promesas en Angular</h2>
+        </div>
+        <div class="col-md-12">
+            <p>Uso de promesas en angular con la Api de itunes</p>
+        </div>
     </div>
-    <button class="btn btn-primary" (click)="doSearch(search.value)"> 
-          Search
-  </button>
-</form>
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let track of itunes.results">
-        <img src="{{track.artworkUrl30}}">
-        <a target="_blank" href="{{track.trackViewUrl}}">{{ track.trackName }}
-      </a>
-    </li>
-</ul>
+    <div class="row">
+        <div class="container">
+            <div class="col-md-6">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Enter search string" #search>
+                    </div>
+                    <button class="btn btn-primary" (click)="doSearch(search.value)"> 
+                          Search
+                  </button>
+                </form>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let track of itunes.results">
+                        <img src="{{track.artworkUrl30}}">
+                        <a target="_blank" href="{{track.trackViewUrl}}">{{ track.trackName }}
+                      </a>
+                    </li>
+                </ul>
 
-<div class="text-center">
-    <p class="lead" *ngIf="loading">Loading...</p>
+                <div class="text-center">
+                    <p class="lead" *ngIf="loading">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
